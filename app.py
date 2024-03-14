@@ -52,7 +52,7 @@ def main():
         st.metric("Total Homens", total_homens)
 
 
-
+    st.write(total_sexo)
     total_sexo = df_filtrado.drop_duplicates(subset=['REGISTRO'])['SEXO'].value_counts().reset_index().rename(columns={"index":"SEXO", "SEXO":"Total"})
 
     total_raca = df_filtrado.drop_duplicates(subset=['REGISTRO'])['RACA'].value_counts(ascending=True).reset_index().rename(columns={"index":"Raça", "RACA":"Total"})
