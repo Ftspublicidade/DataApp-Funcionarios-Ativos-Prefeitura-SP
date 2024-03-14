@@ -61,10 +61,11 @@ def main():
     total_tempo = df_filtrado["GRUPO_TEMPO_EXERCICIO"].value_counts().reset_index().\
                     rename(columns={"index":"Grupo", "GRUPO_TEMPO_EXERCICIO":"Total"})
 
-    st.write(total_sexo)
+    
     fig = px.pie(total_sexo, values='count', names='Total', title='Proporção de funcionários por Sexo', color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig)
 
+    st.write(total_raca)
     fig1= px.bar(total_raca, x='Total', y='Raça', title="Total de Funcionários por Raça",
              text="Total", color_discrete_sequence=["#FF4500"], orientation="h")
     st.plotly_chart(fig1)
