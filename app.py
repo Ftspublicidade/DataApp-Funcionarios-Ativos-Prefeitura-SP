@@ -67,7 +67,7 @@ def main():
 
     st.write(total_raca)
     fig1= px.bar(total_raca, x='Total', y='count', title="Total de Funcionários por Raça",
-             text="count", color_discrete_sequence=["#FF4500"], orientation="h")
+             text="count", color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig1)
 
     fig2 = px.bar(total_tempo, x='Grupo', y='Total', title="Total de Funcionários por Tempo de casa",text="Total", color_discrete_sequence=["#FF4500"])
