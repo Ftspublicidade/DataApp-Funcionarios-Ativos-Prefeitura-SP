@@ -56,7 +56,7 @@ def main():
     total_sexo = df_filtrado.drop_duplicates(subset=['REGISTRO'])['SEXO'].value_counts().reset_index().rename(columns={"index":"SEXO", "SEXO":"Total"})
 
 
-    total_raca = df_filtrado.drop_duplicates(subset=['REGISTRO'])['RACA'].value_counts(ascending=True).reset_index().rename(columns={"index":"Raça", "RACA":"Total"})
+    total_raca = df_filtrado.drop_duplicates(subset=['REGISTRO'])['RACA'].value_counts().reset_index().rename(columns={"index":"Raça", "RACA":"Total"})
 
     total_tempo = df_filtrado["GRUPO_TEMPO_EXERCICIO"].value_counts().reset_index().\
                     rename(columns={"index":"Grupo", "GRUPO_TEMPO_EXERCICIO":"Total"})
@@ -65,11 +65,12 @@ def main():
     fig = px.pie(total_sexo, values='count', names='Total', title='Proporção de funcionários por Sexo', color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig)
 
-    st.write(total_raca)
+    
     fig1= px.bar(total_raca, x='Total', y='count', title="Total de Funcionários por Raça",
              text="count", color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig1)
 
+    st.write(total_tempo)
     fig2 = px.bar(total_tempo, x='Grupo', y='Total', title="Total de Funcionários por Tempo de casa",text="Total", color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig2)
 
