@@ -62,7 +62,7 @@ def main():
                     rename(columns={"index":"Grupo", "GRUPO_TEMPO_EXERCICIO":"Total"})
 
     st.write(total_sexo)
-    fig = px.pie(total_sexo, values='Total', names='SEXO', title='Proporção de funcionários por Sexo', color_discrete_sequence=["#FF4500"])
+    fig = px.pie(total_sexo, values='count', names='Total', title='Proporção de funcionários por Sexo', color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig)
 
     fig1= px.bar(total_raca, x='Total', y='Raça', title="Total de Funcionários por Raça",
