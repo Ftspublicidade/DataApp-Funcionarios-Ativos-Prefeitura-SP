@@ -52,14 +52,16 @@ def main():
         st.metric("Total Homens", total_homens)
 
 
-    st.write(total_sexo)
+    
     total_sexo = df_filtrado.drop_duplicates(subset=['REGISTRO'])['SEXO'].value_counts().reset_index().rename(columns={"index":"SEXO", "SEXO":"Total"})
+
 
     total_raca = df_filtrado.drop_duplicates(subset=['REGISTRO'])['RACA'].value_counts(ascending=True).reset_index().rename(columns={"index":"Raça", "RACA":"Total"})
 
     total_tempo = df_filtrado["GRUPO_TEMPO_EXERCICIO"].value_counts().reset_index().\
                     rename(columns={"index":"Grupo", "GRUPO_TEMPO_EXERCICIO":"Total"})
 
+    st.write(total_sexo)
     fig = px.pie(total_sexo, values='Total', names='SEXO', title='Proporção de funcionários por Sexo', color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig)
 
