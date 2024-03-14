@@ -70,8 +70,8 @@ def main():
              text="count", color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig1)
 
-    st.write(total_tempo)
-    fig2 = px.bar(total_tempo, x='Grupo', y='Total', title="Total de Funcionários por Tempo de casa",text="Total", color_discrete_sequence=["#FF4500"])
+    
+    fig2 = px.bar(total_tempo, x='Total', y='count', title="Total de Funcionários por Tempo de casa",text="count", color_discrete_sequence=["#FF4500"])
     st.plotly_chart(fig2)
 
 
